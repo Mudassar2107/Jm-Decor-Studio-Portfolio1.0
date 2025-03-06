@@ -1,0 +1,98 @@
+.App {
+    min-height: 100vh;
+    background-color: #0A0A0A;
+    overflow-x: hidden;
+  }
+  
+  /* For smooth page transitions */
+  .page-transition {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Remove default padding for bootstrap container-fluid when needed */
+  .container-fluid.p-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+  }
+  
+  /* Optional: Style for sections */
+  section {
+    padding: 100px 0; /* Add padding for better spacing */
+    min-height: 100vh; /* Ensure each section takes full viewport height */
+  }
+  
+  .element {
+    padding: 60px 0; /* Add padding to each section */
+    padding-top: 60px; /* Adjust based on your navbar height */
+    margin-top: -60px; /* Negative margin to offset the padding */
+  }
+  
+  .landing-page {
+    background-color: #0A0A0A; /* Ensure it matches the theme */
+  }
+  
+  .gallery {
+    background-color: #0A0A0A; /* Ensure it matches the theme */
+  }
+  
+  /* Loading Container */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+  }
+
+  .loading-spinner {
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Error Pages */
+  .error-container,
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--bg-dark);
+    color: var(--primary-gold);
+  }
+
+  .error-home-link {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-gold), #B88A2E);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .error-home-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 166, 63, 0.3);
+  }

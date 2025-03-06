@@ -1,0 +1,89 @@
+.floating-buttons-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* Ensures it stays on top */
+}
+
+.floating-button {
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s ease; /* Added smooth transition */
+  background-color: #007BFF; /* Default blue color */
+  color: #fff;
+}
+
+.floating-button:hover {
+  transform: scale(1.15); /* Slightly bigger scale */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+  background-color: #0056b3; /* Darken background color on hover */
+}
+
+/* WhatsApp button green color */
+.floating-button.whatsapp {
+  background-color: #25D366; /* WhatsApp Green */
+}
+
+.floating-button.whatsapp:hover {
+  background-color: #128C7E; /* Darker WhatsApp Green on hover */
+}
+
+/* Call button blue color */
+.floating-button.call {
+  background-color: #007BFF; /* Default blue color */
+}
+
+.floating-button.call:hover {
+  background-color: #0056b3; /* Darken blue on hover */
+}
+
+/* Location button - Google Maps red color */
+.floating-button.location {
+  background-color: #DB4437; /* Google Maps Red */
+}
+
+.floating-button.location:hover {
+  background-color: #C1352D; /* Darker red on hover */
+}
+
+/* Instagram button color */
+.floating-button.instagram {
+  background-color: #E1306C; /* Instagram Pink */
+}
+
+.floating-button.instagram:hover {
+  background-color: #C13584; /* Darker Instagram Pink on hover */
+}
+
+/* Mobile responsiveness - Adjustments for small screens */
+@media (max-width: 768px) {
+  .floating-buttons-container {
+    right: 10px; /* Reduce spacing on the right */
+    bottom: 10px; /* Reduce spacing at the bottom */
+    gap: 8px; /* Reduce gap between buttons */
+  }
+
+  .floating-button {
+    padding: 8px; /* Smaller padding */
+    font-size: 18px; /* Smaller icon size */
+  }
+
+  /* For very small screens like mobile in portrait mode */
+  @media (max-width: 480px) {
+    .floating-buttons-container {
+      right: 5px; /* Even smaller spacing on the right */
+      bottom: 5px; /* Even smaller spacing at the bottom */
+      gap: 6px; /* Smaller gap between buttons */
+    }
+
+    .floating-button {
+      padding: 6px; /* Further reduce padding */
+      font-size: 14px; /* Even smaller icons */
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fallback font */
+}
+
+.subsection-container {
+    padding: 20px;
+    background-color: #0A0A0A; /* Dark background */
+}
+
+.subsection-heading {
+    font-family: 'Playfair Display', serif; /* Font style */
+    font-size: 1.8rem; /* Font size */
+    color: #D6CDA4; /* Soft Gold color */
+    margin: 10px 0; /* Space above and below */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.subsection-heading:hover {
+    color: #1E90FF; /* Navy Blue color on hover */
+}

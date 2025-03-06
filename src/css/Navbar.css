@@ -1,0 +1,172 @@
+/* Import a modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Changed from space-between to center */
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to right, var(--bg-dark), rgba(28, 28, 28, 0.95));
+    color: var(--primary-gold); /* Use CSS variable for consistency */
+    font-family: 'Playfair Display', Georgia, serif; /* Modern font */
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 20px rgba(217, 166, 63, 0.15);
+    z-index: 1000; /* Ensure it stays on top */
+    transition: all 0.4s ease;
+    border-bottom: 2px solid rgba(217, 166, 63, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 25px rgba(217, 166, 63, 0.25);
+    border-bottom: 2px solid var(--primary-gold);
+}
+
+.navbar-links {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Changed from flex-start to center */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    gap: 45px; /* Adjusted space between links for better separation */
+    transition: all 0.3s ease-in-out; /* Add transition for mobile menu */
+    overflow: hidden; /* Hide overflow */
+    padding-left: 0; /* Removed left padding */
+}
+
+.navbar-links.active {
+    display: flex; /* Show links when active */
+}
+
+/* Active link styles */
+.navbar-links a.active {
+    background: linear-gradient(135deg, var(--primary-gold), #d4af37);
+    color: var(--bg-dark);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(217, 166, 63, 0.3);
+}
+
+/* Link styles */
+.navbar-links a {
+    color: var(--primary-gold);
+    text-decoration: none; /* Remove underline */
+    font-weight: 700; /* Bold text */
+    font-size: 18px; /* Increased font size for better readability */
+    padding: 12px 24px;
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transitions */
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Center align items vertically */
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.navbar-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gold);
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::before {
+    width: 100%;
+}
+
+.navbar-links a:hover {
+    background: rgba(217, 166, 63, 0.15);
+    color: var(--primary-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 166, 63, 0.2);
+    text-shadow: 0 0 15px rgba(217, 166, 63, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Keep space-between on mobile for hamburger menu */
+        padding: 15px 25px;
+        background: var(--bg-dark);
+    }
+
+    .navbar-toggle {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--primary-gold);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-toggle:hover {
+        transform: scale(1.1);
+        color: #d4af37;
+    }
+
+    .navbar-links {
+        gap: 20px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: linear-gradient(to bottom, var(--bg-dark), rgba(28, 28, 28, 0.98));
+        width: 100%;
+        padding: 20px 0;
+        border-bottom: 2px solid var(--primary-gold);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 15px 25px;
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        border-radius: 0;
+    }
+
+    .navbar-links a:hover {
+        transform: translateY(0);
+        background: rgba(217, 166, 63, 0.1);
+    }
+}
+
+/* New styles for the navbar toggle */
+.navbar-toggle {
+    display: none; /* Hidden by default */
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Pointer cursor */
+    color: var(--primary-gold);
+}
+
+/* Show toggle button on smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar-toggle {
+        display: block; /* Show toggle icon on mobile */
+    }
+}
