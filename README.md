@@ -58,17 +58,25 @@ Outputs to the `build/` folder.
 
 ## Available Scripts
 
-- `npm start` – Start dev server
-- `npm test` – Run tests in watch mode
-- `npm run build` – Create production build
-- `npm run eject` – Eject CRA configuration (irreversible)
+In the project directory, you can run:
 
-## Notes
+### `npm start`
 
-- The gallery in `Gallery.jsx` references images under `/images/...` paths. Place those assets under `public/images/...` so they can be served at runtime. Component-specific images imported via JS live in `src/images/`.
-- Smooth scrolling uses element IDs (`landing`, `gallery`, `about`). Ensure those IDs exist on the target sections.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## License
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Private project. All rights reserved.
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
